@@ -1,12 +1,22 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/src/components/layout/theme-provider";
+import { TooltipProvider } from "@/src/components/ui/tooltip";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SAAS Starter Kit",
-  description: "SAAS Starter Kit with Stripe, Supabase, Postgres",
+  title: "Master of Languages - Learn Languages Through Conversation",
+  description: "Revolutionary AI-powered language learning through natural conversation. Learn French, Spanish, Portuguese, and German with personalized tutoring.",
+  keywords: ["language learning", "AI tutor", "conversation practice", "French", "Spanish", "Portuguese", "German"],
+  authors: [{ name: "Master of Languages Team" }],
+  openGraph: {
+    title: "Master of Languages - Learn Languages Through Conversation",
+    description: "Revolutionary AI-powered language learning through natural conversation.",
+    type: "website",
+    locale: "en_US",
+  },
 };
 
 export default function RootLayout({
@@ -15,10 +25,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      {/* Required for pricing table */}
-      <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider>
+          <TooltipProvider>
+            {children}
+          </TooltipProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
