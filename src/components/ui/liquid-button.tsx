@@ -3,7 +3,7 @@
 import React, { forwardRef } from 'react';
 import LiquidGlass from 'liquid-glass-react';
 import { cn } from '@/lib/utils';
-import { LucideIcon } from 'lucide-react';
+import { DivideIcon as LucideIcon } from 'lucide-react';
 
 interface LiquidButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: LucideIcon;
