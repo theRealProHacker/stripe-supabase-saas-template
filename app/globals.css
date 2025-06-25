@@ -95,7 +95,8 @@
   }
 
   .modal-enter-active {
-    @apply opacity-100 scale-100 transition-all duration-200 ease-out;
+    @apply opacity-100 scale-100;
+    transition: all 0.2s ease-out;
   }
 
   .modal-exit {
@@ -103,7 +104,8 @@
   }
 
   .modal-exit-active {
-    @apply opacity-0 scale-95 transition-all duration-150 ease-in;
+    @apply opacity-0 scale-95;
+    transition: all 0.15s ease-in;
   }
 
   /* Subtitle styles */
