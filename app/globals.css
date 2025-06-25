@@ -78,7 +78,10 @@
 @layer components {
   /* Liquid glass button base styles */
   .liquid-button {
-    @apply relative overflow-hidden rounded-full transition-all duration-300;
+    position: relative;
+    overflow: hidden;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
     backdrop-filter: blur(10px);
     background: hsl(var(--glass));
     border: 1px solid hsl(var(--border) / 0.3);
@@ -91,27 +94,37 @@
 
   /* Modal animation styles */
   .modal-enter {
-    @apply opacity-0 scale-95;
+    opacity: 0;
+    transform: scale(0.95);
   }
 
   .modal-enter-active {
-    @apply opacity-100 scale-100;
+    opacity: 1;
+    transform: scale(1);
     transition: all 0.2s ease-out;
   }
 
   .modal-exit {
-    @apply opacity-100 scale-100;
+    opacity: 1;
+    transform: scale(1);
   }
 
   .modal-exit-active {
-    @apply opacity-0 scale-95;
+    opacity: 0;
+    transform: scale(0.95);
     transition: all 0.15s ease-in;
   }
 
   /* Subtitle styles */
   .subtitles {
-    @apply fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50;
-    @apply px-6 py-3 rounded-lg backdrop-blur-md;
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(12px);
     background: hsl(var(--glass));
     border: 1px solid hsl(var(--border) / 0.3);
     max-width: 80vw;
@@ -119,25 +132,46 @@
 
   /* Circular button positioning */
   .circular-button-top-left {
-    @apply fixed top-6 left-6 z-40;
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 40;
   }
 
   .circular-button-top-right {
-    @apply fixed top-6 right-6 z-40;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 40;
   }
 
   .circular-button-right-middle {
-    @apply fixed top-1/2 right-6 transform -translate-y-1/2 z-40;
+    position: fixed;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    z-index: 40;
   }
 
   .circular-button-bottom-right {
-    @apply fixed bottom-6 right-6 z-40;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 40;
   }
 
   /* Text input for chat mode */
   .chat-input {
-    @apply fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50;
-    @apply w-full max-w-2xl px-4 py-3 rounded-lg backdrop-blur-md;
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    width: 100%;
+    max-width: 42rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(12px);
     background: hsl(var(--glass));
     border: 1px solid hsl(var(--border) / 0.3);
   }
