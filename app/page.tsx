@@ -1,8 +1,8 @@
 import React from 'react';
-import { Hero } from '@/src/components/landing/hero';
-import { Features } from '@/src/components/landing/features';
-import { Pricing } from '@/src/components/landing/pricing';
-import { Footer } from '@/src/components/landing/footer';
+import { Hero } from '@/components/landing/hero';
+import { Features } from '@/components/landing/features';
+import { Pricing } from '@/components/landing/pricing';
+import { Footer } from '@/components/landing/footer';
 
 export default function LandingPage() {
   return (
